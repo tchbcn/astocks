@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+gs.log
+monitor.log
+training_history.json
+update_failed_*.txt
+
+# Data (large files - keep in local only if needed)
+data/
+store/
+preprocessed_configs/
+metadata/
+metadata_dropped/
+tmp/
+memories/
+lstm_ppo_checkpoints/
+*.csv
+*.keras
+*.db
+*.sqlite
+*.sql
+
+# Secrets
+api_key.json
+*_secret*
+*_key*
+
+# Project specific
+uuid
+keep_gs_alive.sh
+gs_monitor.sh
