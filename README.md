@@ -4,26 +4,51 @@
 
 ## 🚀 快速开始
 
-### 1. 安装依赖
+### 1. 安装依赖（首次）
 
 ```bash
+# 创建虚拟环境
+python3 -m venv venv
+
+# 激活虚拟环境
+source venv/bin/activate  # Mac/Linux
+# 或 venv\Scripts\activate  # Windows
+
+# 安装依赖
 pip install -r requirements.txt
 ```
 
-### 2. 运行系统
+### 2. 准备数据
 
 ```bash
-# 显示菜单选择策略
-python main.py
+# 方式A：自动下载全部A股数据（后台运行，断点续传）
+./run_a_ak_c.sh
 
-# 直接运行特定策略
-python a_mul.py
+# 方式B：交互式菜单
+./run.sh
+# 选择 "2. 数据管理" → "1. 下载/补全 A股历史数据"
 
-# 快速测试环境
-python main.py --test
+# 方式C：手动运行
+source venv/bin/activate
+python a_ak_c.py
+```
 
-# 列出所有策略
-python main.py --list
+**注意：**
+- 首次下载需要较长时间（5000+只股票，建议后台运行）
+- 支持断点续传，可随时中断，下次继续
+- 默认使用 SQLite（无需额外服务），自动创建 `stock_data.db`
+- 如需使用 ClickHouse，修改 `a_ak_c.py` 中 `USE_CLICKHOUSE = True`
+
+### 3. 运行回测
+
+```bash
+# 主菜单选择
+./run.sh
+# 选择 "1. 运行策略回测"
+
+# 或直接运行
+./run_a_mul.sh        # 多因子微盘股策略
+./run_gs_aShare.sh    # 两会特别策略
 ```
 
 ## 📦 项目结构
